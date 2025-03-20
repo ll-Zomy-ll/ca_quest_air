@@ -19,7 +19,7 @@ def delete_elements(array: list, reference: str) -> list:
     new_array: list = []
     i: int = 0
     while i < len(array):
-        if is_not_included(array[i], reference):
+        if is_not_included(array[i].lower(), reference.lower()):
             new_array.append(array.pop(i))
         else:
             i += 1

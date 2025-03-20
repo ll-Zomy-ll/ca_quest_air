@@ -15,9 +15,11 @@ def get_array(string: str, separator: str) -> list:
     while i < len(string):
         if string[i] == separator[0]:
             if is_separator(string[i:], separator):
-                array.append(element)
-                element = ''
+                if element:
+                    array.append(element)
+                    element = ''
                 i += len(separator)
+                continue
         element += string[i]
         i += 1
     array.append(element)
