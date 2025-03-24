@@ -15,8 +15,9 @@ def get_array(string: str, separator: str) -> list:
         if is_not_same_char(char, separator):
             element += char
         else:
-            array.append(element)
-            element = ''
+            if element:
+                array.append(element)
+                element = ''
     array.append(element)
     return array
 
